@@ -1,0 +1,31 @@
+spring:
+  datasource:
+    driver-class-name: org.mariadb.jdbc.Driver
+    url: jdbc:mariadb://localhost:3311/paymentdb
+    username: ${db_username}
+    password: ${db_password}
+  jpa:
+    hibernate:
+      ddl-auto: update
+    database-platform: org.hibernate.dialect.MariaDB106Dialect
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          jwk-set-uri: http://localhost:9990/realms/Product/protocol/openid-connect/certs
+server:
+  port: 8081
+
+app:
+  mapping:
+    banks:
+      TPB:
+        provinces:
+          CT: '0064'
+          TV: '0084'
+        districts:
+          NK: '0001'
+          TC: '0002'
+        branchs:
+          001-t: '0090'
+          002-c: '0091'
