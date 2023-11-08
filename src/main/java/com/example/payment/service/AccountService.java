@@ -7,4 +7,9 @@ public interface AccountService {
 
   AccountResponse create(AccountRequest request);
 
+  boolean pay(String accountNumber, Double amount);
+
+  boolean deposit(String accountNumber, Double amount);
+
+  AccountResponse findByAccountNumber(String accountNumber);
 }
